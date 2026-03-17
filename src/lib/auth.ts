@@ -22,10 +22,8 @@ export const auth = betterAuth({
   advanced: {
     crossSubDomainCookies: {
       enabled: true,
-      domain: "fullstackclub.com.br",
+      domain:
+        env.NODE_ENV === "production" ? ".caza-tech.com" : undefined,
     },
-  },
-  account: {
-    skipStateCookieCheck: true,
   },
 });
